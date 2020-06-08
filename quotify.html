@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotify</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-bind:style="styleObject">
+        <ul>
+            <quote-component
+                v-for="q in quoteList"
+                v-bind:quote="q"
+                v-bind:key="q.id"
+            ></quote-component>
+        </ul>
+    </div>
+
+
+    <script>
+        Vue.component('quote-component', {
+            props: ['quote'],
+            template: '<li>{{ quote.text }}</li>'
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Works',
+                quoteList: [
+                    { id: 0, text: 'Wer Schokolade isst, muss Schokolade kaufen.' },
+                    { id: 1, text: 'Hyvä kahvia kannatta odottaa.' }
+                ],
+                styleObject: {
+                    color: 'blue',
+                    fontSize: '16px'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
