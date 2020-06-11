@@ -1,5 +1,7 @@
 # Django Backend
 
+**I continued the Django tutorial in a separate repo: https://github.com/stefanbschneider/django_tutorial**
+
 Mostly based on the [Django tutorial](https://docs.djangoproject.com/en/3.0/intro/tutorial01/).
 
 Currently includes:
