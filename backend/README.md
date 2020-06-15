@@ -1,13 +1,16 @@
 # Django Backend
 
-**I continued the Django tutorial in a separate repo: https://github.com/stefanbschneider/django_tutorial**
+Django Backend for the Quotify app.
 
-Mostly based on the [Django tutorial](https://docs.djangoproject.com/en/3.0/intro/tutorial01/).
+TODO: connect to MongoDB
 
-Currently includes:
+## Setup
 
-* The quotify project
-* The polls app from the tutorial
+Install the latest `djongo` from GitHub master (with Django 3 support). Then:
+
+```
+pip install -r requirements.txt
+```
 
 ## Development
 
