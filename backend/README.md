@@ -2,11 +2,9 @@
 
 Django Backend for the Quotify app.
 
-TODO: connect to MongoDB
+Connect to MongoDB doesn't work. `djongo` is not recognized as backend. Instead, I'll stay with SQLite.
 
 ## Setup
-
-Install the latest `djongo` from GitHub master (with Django 3 support). Then:
 
 ```
 pip install -r requirements.txt
