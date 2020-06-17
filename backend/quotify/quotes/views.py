@@ -1,8 +1,12 @@
+import json
+import random
+
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.template import loader
 
 from .models import Quote
 
@@ -20,3 +24,12 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Quote
     template_name = 'quotes/detail.html'
+
+
+def rand_quote(request):
+    template = loader.get_template('quotes/random.html')
+    rand_quote = random.choice(Quote.objects.all())
+    context = {'quote': rand_quote}
+    return HttpResponse(template.render(context, request))
+
+
