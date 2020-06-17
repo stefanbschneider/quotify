@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail {{quote.id}}</title>
-</head>
-<body>
+{% extends 'quotes/base.html' %}
+
+{% block content %}
     <h1>{{ quote.quote_text }}</h1>
     <p>{{ quote.likes }} like{{ quote.likes |pluralize }}</p>
-
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-</body>
-</html>
+{% endblock %}
