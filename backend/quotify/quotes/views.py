@@ -27,9 +27,9 @@ class DetailView(generic.DetailView):
 
 
 def rand_quote(request):
-    template = loader.get_template('quotes/random.html')
+    """View a random quote"""
     rand_quote = random.choice(Quote.objects.all())
     context = {'quote': rand_quote}
-    return HttpResponse(template.render(context, request))
+    return render(request, 'quotes/random.html', context)
 
 
