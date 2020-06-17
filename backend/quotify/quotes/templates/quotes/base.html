@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--    Bootstrap CSS -->
+<!--    Bootstrap CSS: must come before any other CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 
     <title>Quotify</title>
 </head>
 <body>
-    <h1>Quotify</h1>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{% url 'quotes:index' %}">
+            <i class="fas fa-quote-right"></i>
+            Quotify
+        </a>
+<!--        <a class="navbar-brand" href="{% url 'quotes:index' %}">Quotify</a>-->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'quotes:index' %}">All Quotes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'quotes:random' %}">Random Quote</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="content container">
         {% block content %}
         {% endblock %}
