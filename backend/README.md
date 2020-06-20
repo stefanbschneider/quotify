@@ -6,6 +6,13 @@ Connect to MongoDB doesn't work. `djongo` is not recognized as backend.
 Also other custom backends for free cloud DBs are not available/working...
 I'll stay with SQLite.
 
+## Todo
+
+* Add, update, remove quotes
+* Show list of quotes with num links and publication date
+* Allow sorting the list
+* Deploy on heroku
+
 ## Setup
 
 ```
