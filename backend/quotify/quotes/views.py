@@ -3,24 +3,16 @@ import random
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.utils import timezone
 from django.template import loader
 
 from .models import Quote
 
 
-class IndexView(generic.ListView):
-    template_name = 'quotes/index.html'
-    # instead of the default "object_list"
-    context_object_name = 'quote_list'
-
-    def get_queryset(self):
-        """Return all quotes"""
-        return Quote.objects.all().order_by('-pub_date')
-
-
+# functions
 def like(request, quote_id):
     """Like a specific quote"""
     # TODO: I should do this in a responsive manner in JS or Vue without page reload
@@ -28,11 +20,6 @@ def like(request, quote_id):
     quote.likes += 1
     quote.save()
     return HttpResponseRedirect(reverse('quotes:detail', args=(quote.id,)))
-
-
-class DetailView(generic.DetailView):
-    model = Quote
-    template_name = 'quotes/detail.html'
 
 
 def rand_quote(request):
@@ -44,3 +31,33 @@ def rand_quote(request):
     return HttpResponseRedirect(reverse('quotes:detail', args=(rand_quote.id,)))
 
 
+# basic, gerenic views
+class IndexView(generic.ListView):
+    template_name = 'quotes/index.html'
+    # instead of the default "object_list"
+    context_object_name = 'quote_list'
+
+    def get_queryset(self):
+        """Return all quotes"""
+        return Quote.objects.all().order_by('-pub_date')
+
+
+class DetailView(generic.DetailView):
+    model = Quote
+    template_name = 'quotes/detail.html'
+
+
+# gerneric edit views
+class QuoteCreate(CreateView):
+    model = Quote
+    fields = ['quote_text']
+
+
+class QuoteUpdate(UpdateView):
+    model = Quote
+    fields = ['quote_text']
+
+
+class QuoteDelete(DeleteView):
+    model = Quote
+    success_url = reverse_lazy('index')

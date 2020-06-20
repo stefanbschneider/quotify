@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Quote(models.Model):
@@ -8,3 +9,10 @@ class Quote(models.Model):
 
     def __str__(self):
         return self.quote_text
+
+    def get_absolute_url(self):
+        """
+        Absolute URL of a quote detail. Used for generic create/update views & model forms
+        https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-editing/#model-forms
+        """
+        return reverse('detail', kwargs={'pk': self.pk})
