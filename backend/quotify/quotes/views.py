@@ -21,6 +21,15 @@ class IndexView(generic.ListView):
         return Quote.objects.all().order_by('-pub_date')
 
 
+def like(request, quote_id):
+    """Like a specific quote"""
+    # TODO: I should do this in a responsive manner in JS or Vue without page reload
+    quote = get_object_or_404(Quote, pk=quote_id)
+    quote.likes += 1
+    quote.save()
+    return HttpResponseRedirect(reverse('quotes:detail', args=(quote.id,)))
+
+
 class DetailView(generic.DetailView):
     model = Quote
     template_name = 'quotes/detail.html'

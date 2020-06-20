@@ -3,5 +3,5 @@
 {% block content %}
     <h1>{{ quote.quote_text }}</h1>
     <p>{{ quote.likes }} like{{ quote.likes |pluralize }}</p>
-    <button type="button" class="btn btn-primary">Like</button>
+    <a class="btn btn-primary" href="{% url 'quotes:like' quote.id %}">Like</a>
 {% endblock %}
