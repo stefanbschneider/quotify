@@ -49,6 +49,8 @@ class DetailView(generic.DetailView):
 
 # gerneric edit views
 class QuoteCreate(CreateView):
+    # default template for create & update: quotes/quote_form.html
+    template_name = 'quotes/quote_form.html'
     model = Quote
     fields = ['quote_text']
 
