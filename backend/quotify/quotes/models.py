@@ -15,4 +15,4 @@ class Quote(models.Model):
         Absolute URL of a quote detail. Used for generic create/update views & model forms
         https://docs.djangoproject.com/en/3.0/topics/class-based-views/generic-editing/#model-forms
         """
-        return reverse('detail', kwargs={'pk': self.pk})
+        return reverse('quotes:detail', kwargs={'pk': self.pk})

@@ -5,11 +5,12 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
 from django.views import generic
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic.edit import FormView, CreateView, DeleteView, UpdateView
 from django.utils import timezone
 from django.template import loader
 
 from .models import Quote
+from .forms import QuoteForm
 
 
 # functions
@@ -48,6 +49,10 @@ class DetailView(generic.DetailView):
 
 
 # gerneric edit views
+class QuoteView(FormView):
+    template_name = 'quote.html'
+    form_class = QuoteForm
+
 class QuoteCreate(CreateView):
     # default template for create & update: quotes/quote_form.html
     template_name = 'quotes/quote_form.html'
