@@ -19,7 +19,18 @@ I'll stay with SQLite.
 pip install -r requirements.txt
 ```
 
+## Usage
+
+```
+python manage.py runserver
+```
+
+Then go to http://127.0.0.1:8000/quotes
+
 ## Development
+
+* `quotify/quotify` is the Django project
+* `quotify/quotes` is the app
 
 ### Django
 
