@@ -26,8 +26,6 @@ def like(request, quote_id):
 def rand_quote(request):
     """View a random quote"""
     rand_quote = random.choice(Quote.objects.all())
-    context = {'quote': rand_quote}
-    # return render(request, 'quotes/random.html', context)
     # forward to detail view of randomly selected quote
     return HttpResponseRedirect(reverse('quotes:detail', args=(rand_quote.id,)))
 
@@ -49,10 +47,6 @@ class DetailView(generic.DetailView):
 
 
 # gerneric edit views
-class QuoteView(FormView):
-    template_name = 'quote.html'
-    form_class = QuoteForm
-
 class QuoteCreate(CreateView):
     # default template for create & update: quotes/quote_form.html
     template_name = 'quotes/quote_form.html'

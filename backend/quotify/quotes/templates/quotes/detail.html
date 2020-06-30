@@ -2,8 +2,11 @@
 
 {% block content %}
     <h1>{{ quote.quote_text }}</h1>
-    <p>{{ quote.likes }} like{{ quote.likes |pluralize }}</p>
-    <a class="btn btn-primary" href="{% url 'quotes:like' quote.id %}">Like</a>
-    <a class="btn btn-secondary" href="{% url 'quotes:edit' quote.id %}">Edit</a>
-    <a class="btn btn-danger" href="{% url 'quotes:delete' quote.id %}">Delete</a>
+    <p>Published on: {{ quote.pub_date }}</p>
+<!--    <p><i class="fas fa-heart"></i>{{ quote.likes }} like{{ quote.likes |pluralize }}</p>-->
+    <p>{{ quote.likes }} <i class="fas fa-heart"></i></p>
+
+    <a class="btn btn-primary" href="{% url 'quotes:like' quote.id %}">Like <i class="fas fa-heart"></i></a>
+    <a class="btn btn-secondary" href="{% url 'quotes:edit' quote.id %}">Edit <i class="fas fa-edit"></i></a>
+    <a class="btn btn-danger" href="{% url 'quotes:delete' quote.id %}">Delete <i class="fas fa-trash"></i></a>
 {% endblock %}

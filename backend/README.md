@@ -8,7 +8,6 @@ I'll stay with SQLite.
 
 ## Todo
 
-* Add, update, remove quotes: Add buttons
 * Clean up: remove unneeded files (forms.py, view classes, tempaltes); remove frontend/backend folders
 * Show list of quotes with num links and publication date
 * Allow sorting the list
