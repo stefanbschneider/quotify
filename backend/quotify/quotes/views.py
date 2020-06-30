@@ -10,7 +10,6 @@ from django.utils import timezone
 from django.template import loader
 
 from .models import Quote
-from .forms import QuoteForm
 
 
 # functions
