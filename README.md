@@ -8,8 +8,7 @@ I'll stay with SQLite.
 
 ## Todo
 
-* Show list of quotes with num links and publication date
-* Allow sorting the list
+* Allow sorting the index list: https://mdbootstrap.com/docs/jquery/tables/sort/
 * Deploy on heroku
 * Polish readme
 * publish (public repo, link from website)
