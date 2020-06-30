@@ -2,11 +2,24 @@
 
 {% block content %}
     {% if quote_list %}
-    <ul>
-    {% for quote in quote_list %}
-        <li><a href="{% url 'quotes:detail' quote.id %}">{{ quote.quote_text }}</a></li>
-    {% endfor %}
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Publication Date</th>
+                <th scope="col"><i class="fas fa-heart"></i></th>
+                <th scope="col">Quote</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quote in quote_list %}
+            <tr>
+                <td>{{ quote.pub_date }}</td>
+                <td>{{ quote.likes }}</td>
+                <td><a href="{% url 'quotes:detail' quote.id %}">{{ quote.quote_text }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% else %}
         <p>No quotes available.</p>
     {% endif %}

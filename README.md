@@ -8,10 +8,11 @@ I'll stay with SQLite.
 
 ## Todo
 
-* Clean up: remove unneeded files (forms.py, view classes, tempaltes); remove frontend/backend folders
 * Show list of quotes with num links and publication date
 * Allow sorting the list
 * Deploy on heroku
+* Polish readme
+* publish (public repo, link from website)
 
 ## Setup
 
@@ -29,8 +30,8 @@ Then go to http://127.0.0.1:8000/quotes
 
 ## Development
 
-* `quotify/quotify` is the Django project
-* `quotify/quotes` is the app
+* `quotify` is the Django project
+* `quotes` is the app
 
 ### Django
 
