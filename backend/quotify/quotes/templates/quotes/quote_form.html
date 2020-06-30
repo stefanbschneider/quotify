@@ -1,15 +1,9 @@
 {% extends 'quotes/base.html' %}
 
 {% block content %}
-<!--fixme eidit isn't saved-->
     <form method="post">
         <!--        Django protects against Cross Site Request Forgeries. Should use the token below for all POST forms.-->
         {% csrf_token %}
-<!--        <h1>Edit quote</h1>-->
-<!--        <div class="form-group">-->
-<!--            <label for="quoteTextInput">Quote Text</label>-->
-<!--            <input type="text" class="form-control" id="quoteTextInput" placeholder="{{ quote.quote_text }}">-->
-<!--        </div>-->
         {{ form.as_p }}
         <input type="submit" value="Save">
     </form>

@@ -4,4 +4,6 @@
     <h1>{{ quote.quote_text }}</h1>
     <p>{{ quote.likes }} like{{ quote.likes |pluralize }}</p>
     <a class="btn btn-primary" href="{% url 'quotes:like' quote.id %}">Like</a>
+    <a class="btn btn-secondary" href="{% url 'quotes:edit' quote.id %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'quotes:delete' quote.id %}">Delete</a>
 {% endblock %}
