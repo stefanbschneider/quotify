@@ -12,6 +12,7 @@ I'll stay with SQLite.
     * Or better: use Vue.js
 * Deploy on heroku
     * Avoid hardcoding secrets like secret key in settings py
+    * also check other things to consider for production (eg, debug = false)
 * Polish readme
 * publish (public repo, link from website)
 
