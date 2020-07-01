@@ -9,7 +9,9 @@ I'll stay with SQLite.
 ## Todo
 
 * Allow sorting the index list: https://mdbootstrap.com/docs/jquery/tables/sort/
+    * Or better: use Vue.js
 * Deploy on heroku
+    * Avoid hardcoding secrets like secret key in settings py
 * Polish readme
 * publish (public repo, link from website)
 
