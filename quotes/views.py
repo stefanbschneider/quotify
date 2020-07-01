@@ -1,7 +1,7 @@
 import json
 import random
 
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
 from django.views import generic
@@ -38,6 +38,9 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return all quotes"""
         return Quote.objects.all().order_by('-pub_date')
+        # wrap in list because QuerySet is not Json serializable
+        # data = list(Quote.objects.values())
+        # return JsonResponse(data, safe=False)
 
 
 class DetailView(generic.DetailView):

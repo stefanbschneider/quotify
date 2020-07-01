@@ -2,6 +2,21 @@
 
 {% block content %}
     {% if quote_list %}
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--    <script type='text/javascript'>-->
+<!--        var quotes = {{ quote_list|safe }};-->
+<!--    </script>-->
+
+<!--    <div id="app">-->
+<!--        [[message]]-->
+
+<!--        <ul>-->
+<!--            <li v-for="quote in quotes">-->
+<!--                [[ quote.quote_text ]]-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
     <table class="table">
         <thead>
             <tr>
@@ -20,6 +35,22 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <script>
+        var app = new Vue({
+          delimiters: ['[[', ']]'],
+          el: '#app',
+          data: {
+              message: 'Hello Vue!',
+              people: people,
+          },
+          methods: {
+              greet: function(name) {
+                  console.log('Hello from ' + name + '!')
+              }
+          }
+        });
+      </script>
     {% else %}
         <p>No quotes available.</p>
     {% endif %}
