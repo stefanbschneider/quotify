@@ -38,6 +38,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return all quotes"""
         return Quote.objects.all().order_by('-pub_date')
+        # TODO: trying to return json that I can then use with Vue.js; didn't work
         # wrap in list because QuerySet is not Json serializable
         # data = list(Quote.objects.values())
         # return JsonResponse(data, safe=False)

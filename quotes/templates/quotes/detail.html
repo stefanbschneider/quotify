@@ -9,4 +9,8 @@
     <a class="btn btn-primary" href="{% url 'quotes:like' quote.id %}">Like <i class="fas fa-heart"></i></a>
     <a class="btn btn-secondary" href="{% url 'quotes:edit' quote.id %}">Edit <i class="fas fa-edit"></i></a>
     <a class="btn btn-danger" href="{% url 'quotes:delete' quote.id %}">Delete <i class="fas fa-trash"></i></a>
+
+    <p></p>
+    <p><a class="btn btn-light btn-block" href="{% url 'quotes:random' %}">Next Random Quote</a></p>
+
 {% endblock %}

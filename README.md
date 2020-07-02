@@ -8,9 +8,6 @@ I'll stay with SQLite.
 
 ## Todo
 
-* Allow sorting the index list: https://mdbootstrap.com/docs/jquery/tables/sort/
-    * Or better: use Vue.js
-    * FIXME: https://vsupalov.com/vue-js-in-django-template/
 * Deploy on heroku
     * Avoid hardcoding secrets like secret key in settings py
     * also check other things to consider for production (eg, debug = false)
