@@ -6,14 +6,6 @@ Connect to MongoDB doesn't work. `djongo` is not recognized as backend.
 Also other custom backends for free cloud DBs are not available/working...
 I'll stay with SQLite.
 
-## Todo
-
-* Deploy on heroku
-    * Avoid hardcoding secrets like secret key in settings py
-    * also check other things to consider for production (eg, debug = false)
-* Polish readme
-* publish (public repo, link from website)
-
 ## Setup
 
 ```
