@@ -27,3 +27,10 @@ Then go to http://127.0.0.1:8000
 
 See my [django_tutorial repo](https://github.com/stefanbschneider/django_tutorial) for another example app + useful commands,
 based on the Django tutorial.
+
+## Deployment
+
+* Deployment on heroku
+* Configure heroku config vars:
+    * `DJANGO_SETTINGS_MODULE = quotify.prod_settings`
+    * `DJANGO_SECRET_KEY = <secret key>`
