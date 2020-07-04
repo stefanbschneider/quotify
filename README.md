@@ -2,9 +2,16 @@
 
 ![screenshot](docs/screenshot.png)
 
-An example app using Django, SQLite, and Bootstrap. Deployed on heroku: https://django-quotify.herokuapp.com/
+An example app using Django, SQLite, and Bootstrap. 
+Change notifications via SendGrid.
+Deployed on heroku: https://django-quotify.herokuapp.com/
 
 Quotify allows you to see random inspirational quotes, add new ones, edit or delete existing ones.
+
+**Warning:** This app is experimental. There are no warranties.
+Feel free to add new quotes, but do not enter sensitive data. 
+I am notified of any new or edited quotes.
+
 
 ## Setup
 
@@ -34,3 +41,5 @@ based on the Django tutorial.
 * Configure heroku config vars:
     * `DJANGO_SETTINGS_MODULE = quotify.prod_settings`
     * `DJANGO_SECRET_KEY = <secret key>`
+    * `EMAIL = <youremail@address.com>`
+    * `SENDGRID_API_KEY = <sendgrid_api_key>`

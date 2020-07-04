@@ -1,3 +1,4 @@
+import os
 import json
 import random
 
@@ -8,11 +9,31 @@ from django.views import generic
 from django.views.generic.edit import FormView, CreateView, DeleteView, UpdateView
 from django.utils import timezone
 from django.template import loader
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 from .models import Quote
 
 
 # functions
+def send_email(msg):
+    """Send email containing the message via sendgrid"""
+    # get destination address and API key from env vars
+    dest_mail = os.getenv('EMAIL', None)
+    api_key = os.environ.get('SENDGRID_API_KEY', None)
+    if dest_mail is None or api_key is None:
+        return f"Env var 'EMAIL' or 'SENDGRID_API_KEY' missing. Can't send email."
+
+    email = Mail(from_email='hello@world.com', to_emails=dest_mail, subject='Quotify: Change Notification',
+                 html_content=msg)
+    try:
+        sg = SendGridAPIClient(api_key=api_key)
+        response = sg.send(email)
+        print(f"Email response status code: {response.status_code}")
+        return f"Sent email with msg: {msg}. Status code: {response.status_code}"
+    except Exception as e:
+        print(e.message)
+
 def like(request, quote_id):
     """Like a specific quote"""
     # TODO: I should do this in a responsive manner in JS or Vue without page reload
