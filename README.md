@@ -1,3 +1,5 @@
+![Django CI](https://github.com/stefanbschneider/quotify/workflows/Django%20CI/badge.svg)
+
 # Quotify: Your Daily Dose of Inspirational Quotes (A Django Example App)
 
 ![screenshot](docs/screenshot.png)
