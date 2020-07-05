@@ -78,13 +78,13 @@ class QuoteCreate(CreateView):
     template_name = 'quotes/quote_form.html'
     model = Quote
     fields = ['quote_text']
-    object_change = send_email(f"New quote: {str(object)}")
+    # object_change = send_email(f"New quote: {str(object)}")
 
 
 class QuoteUpdate(UpdateView):
     model = Quote
     fields = ['quote_text']
-    object_change = send_email(f"Updated quote: {str(object)}")
+    # object_change = send_email(f"Updated quote: {str(object)}")
 
 
 class QuoteDelete(DeleteView):
