@@ -28,10 +28,7 @@ class QuoteIndexViewTests(TestCase):
 
     def test_two_quotes(self):
         """Create two quotes and test if they are listed in the right order (newest first)"""
-        # TODO: why + not -?
-
-        yesterday = timezone.now() + datetime.timedelta(days=1)
-        create_quote(quote_text='Quote one', pub_date=yesterday)
-        create_quote(quote_text='Quote two', pub_date=timezone.now())
+        create_quote(quote_text='Quote one')
+        create_quote(quote_text='Quote two')
         response = self.client.get(reverse('quotes:index'))
         self.assertQuerysetEqual(response.context['quote_list'], ['<Quote: Quote two>', '<Quote: Quote one>'])
